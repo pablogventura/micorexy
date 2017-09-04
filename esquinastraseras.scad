@@ -51,5 +51,6 @@ translate([-7,0,6+38.5])tornillo();
 translate([-7+25,0,6+38.5])tornillo();
 //translate([-7+30,4,6+10+10])rotate([0,0,-90])tornillo();
 //translate([-7+30,4+22,6+10+10])rotate([0,0,-90])tornillo();
-translate([20,0,29.5])cube([6,50,19],center=true);
+translate([20,0,29.5])cube([6,50,20.5],center=true);
+translate([20-10,39.5,29.5])cube([20,50,20.5],center=true);
 }
