@@ -18,6 +18,7 @@ translate([-19,0,1.55])
 rotate([-90,0,0])
 union(){
 translate([53.5,-2.5,0])cylinder(r=24/2,h=30);
+    //moviendo el 10 de los de abajo a los de arriba ya esta para hacer el izquierdo
 translate([26+8,-14-2,25/2])rotate([0,3*90,90])cylinder(r1=18/2,r2=4.5/2,h=2.5+19/2);
 translate([26+8,-14-21.5-2,25/2])rotate([0,3*90,90])cylinder(r2=18/2,r1=4.5/2,h=2.5);
 
