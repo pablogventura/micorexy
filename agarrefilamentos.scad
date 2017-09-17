@@ -1,15 +1,15 @@
 $fn=32;
 difference(){
-translate([0,0,15])cube([40,40,20],center=true);
+translate([-5,0,15-5])cube([30,40,10],center=true);
 hull(){
 cylinder(r=18/2,h=40);
 translate([20,0,0])cylinder(r=18/2,h=40);
 }
 
-translate([15,15,25])tornillo();
-translate([15,-15,25])tornillo();
-translate([-15,15,25])tornillo();
-translate([-15,-15,25])tornillo();
+translate([5,15,25-10])tornillo();
+translate([5,-15,25-10])tornillo();
+translate([-15,15,25-10])tornillo();
+translate([-15,-15,25-10])tornillo();
 }
 module tornillo(){
     color("blue")
