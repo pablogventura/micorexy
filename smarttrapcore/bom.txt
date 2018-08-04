@@ -1,0 +1,15 @@
+correa 4metros (3520)
+
+3 metros de varillas: (2900)
+    2*315mm con las 2 de 325mm
+    2*415mm con las 2 de 555mm
+    4*360mm 2 con las de 370mm las otras 2 con el metro
+    
+planchas
+    lados 2*378x390
+    atras 515x390
+    abajo 551x378
+
+rodamientos:
+    10 x 608zz
+    12 x lm8uu (en la prusa ya hay 12, pero llevo 2 mas por las dudas)
