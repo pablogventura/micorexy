@@ -41,7 +41,6 @@ translate([16,-6,5])cube([8,6,50]);
 */
 //translate([0,61-25,0])cylinder(r=8,h=150,$fn=16,center=true);
 
-/*
 
 
 difference(){
@@ -149,7 +148,7 @@ difference(){
 }
 
 
-*/
+
 /*
 translate([0,-30-20+50,-15])
 rotate([0,0,180])
