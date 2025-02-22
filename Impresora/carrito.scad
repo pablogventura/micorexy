@@ -186,7 +186,7 @@ translate([-18.2,17.2,-49])rotate([90,0,0])color("blue")import("Stl_Importados/E
 translate([0,-15,-28-23])color("red")cylinder(r=1,h=50);
 }
 
-e3d_volcano();
+//e3d_volcano();
 carrito();
-translate([0,-50,height_fusor])soporte_disipador();
-translate([0,0,-4+height_fusor])layerfan();
+//translate([0,-50,height_fusor])soporte_disipador();
+//translate([0,0,-4+height_fusor])layerfan();

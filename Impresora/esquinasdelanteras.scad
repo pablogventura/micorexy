@@ -1,27 +1,30 @@
 //translate([-29,0,0])import("./smartrapcore/XY_motor_left - XY_motor_left.stl");
 $fn=32;
-module tornillo(){
-    rotate([90,0,0]){
-        cylinder(r1=8/2,r2=4/2,h=4);
-        cylinder(r=4/2,h=50);
-        translate([0,0,-9.5-100])cylinder(r=8/2,h=10+100);
-    }
-}
 
+izquierda = 1;
+
+
+translate([70-izquierda*70,0,0])
+mirror([1-izquierda,0,0])
+difference(){
+translate([9.5,0,-10.9])
+mirror([1,0,0])
+color("blue")
 difference(){
     union(){
         hull(){
-            translate([15.5,-10,-10])cube([9,10,16]);
-            translate([-17.5,-10,15+5+7])cube([42,10,16]);
+            //translate([15.5,-10,-10])cube([9,10,16]);
+            translate([-17.5-20,-20,-5.6-20])cube([42+20,20,70+20+20]);
 
         }
         translate([15.5,-10,14])cube([9,10,16]);
-        translate([15.5,-10,14+5+4])cube([9,52,16-2+7]);
-        translate([-17.5,-10,14+3.8+15+7])cube([42,52,5]);
+        translate([15.5,-10,-5.5])cube([9,52,16-2+30+5+6.6]);
+        translate([-17.5-20,-10,14+3.8+15+7+6.6-10*(1-izquierda)])cube([42+20,52,5]);
+        translate([-17.5+22.5,-10,14+3.8+15+7+6.6-5])cube([17,52,5]);
     }
 
-translate([-7.5,-25,23-3.3+7])cube([22,50,13+10]);
-    translate([-12,6,10]){
+//translate([-7.5,-25,23-3.3+7])cube([22,50,13+10]);
+    translate([-12-20,6,10]){
         cylinder(r=3.5/2,h=50);
         translate([0,31,0])cylinder(r=3.5/2,h=50);
         translate([31,0,0])cylinder(r=3.5/2,h=50);
@@ -29,14 +32,34 @@ translate([-7.5,-25,23-3.3+7])cube([22,50,13+10]);
         translate([31/2,31/2,0])cylinder(r=23/2,h=50);
     }
 
-    translate([9.5,5,10.9])rotate([90,0,0])cylinder(r=8.25/2,h=50);
-    translate([10,-5,-4])rotate([0,0,90])tornillo();
-    //translate([16,-5,24.5+3])rotate([0,0,90])tornillo();
-    translate([16,11,24.5+3])rotate([0,0,90])tornillo();
-    translate([16,11+20,24.5+3])rotate([0,0,90])tornillo();
-    translate([18,-13+6,11])rotate([0,180,0])endstop();
+    translate([9.5,5,10.9])rotate([90,0,0])cylinder(r=10/2,h=50);
+
+    translate([18+2,38,11])rotate([180,0,0])endstop();
+    
 }
 
+
+translate([-15.005,-20.01,73.5-20])
+color("red")
+cube([20,20+1,40]);
+
+
+translate([-15.005,-20.01,-76.5+20])
+color("red")
+cube([20,20+1,40]);
+
+translate([-5+42.5/2,10,43.5-10])
+mirror([0,1,0])
+tornillo();
+translate([-5+42.5/2,10,43.5-10-90])
+mirror([0,1,0])
+tornillo();
+translate([-5+42.5/2-41.25+10,10,43.5-10-3-7-10])
+mirror([0,1,0])
+tornillo();
+
+}
+//include <esquinastraseras.scad>
 module endstop(){
     rotate([90,0,0]){
         hull(){
@@ -45,4 +68,17 @@ module endstop(){
         }
         translate([-5,0,0])cube([10,1.5,20],center=true);
     }
+}
+
+
+
+module tornillo(){
+    translate([10,-10,70/2-30+25])
+    rotate([90+180,0,0])
+    cylinder(d=5.5,h=50);
+
+    translate([0,-25,0])
+    translate([10,-10,70/2-30+25])
+    rotate([90+180,0,0])
+    cylinder(d=14,h=50);
 }
