@@ -1,80 +1,90 @@
+
+//cube([45,9.5,28]);
+
 $fn=32;
 // si estos valores se ponen en 0, queda listo para el volcano
-height_fusor=-5;
+height_fusor=-25;
 height_fusor_fan=-8.5;
 module carrito(){
+    translate([0,0,-15])
 difference(){
-union(){
-hull(){
-translate([0,61-25+5,-28])cylinder(r=22/2,h=5);
-translate([0,22,-28+2.5])cube([22,1,5],center=true);
-}
-translate([0,0,15])
-hull(){
-translate([0,61-25+5,-28])cylinder(r=22/2,h=5);
-translate([0,22,-28+2.5])cube([22,1,5],center=true);
-}}
+    union(){
+        hull(){
+            translate([0,61-25+5,-28])cylinder(r=22/2,h=5);
+            translate([0,22,-28+2.5])cube([22,1,5],center=true);
+        }
+        translate([0,0,15])
+        hull(){
+            translate([0,61-25+5,-28])cylinder(r=22/2,h=5);
+            translate([0,22,-28+2.5])cube([22,1,5],center=true);
+        }
+    }
 
-translate([0,61-25+5,-30])cylinder(r=19/2,h=50);
+    translate([0,61-25+5,-30])cylinder(r=19/2,h=50);
 }
 difference(){
-union(){
-translate([0,11.5,-2.65+5/2])cube([55,23,50.5+5],center=true);
-hull(){
-translate([-22.5,-2,-3])cube([10,10,10],center=true);
-translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
-}
-translate([45,0,11])
-hull(){
-translate([-22.5,-2,-3])cube([10,10,10],center=true);
-translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
-}
-translate([0,23,0])
-rotate([0,0,180])
-hull(){
-translate([-22.5,-2,-3])cube([10,10,10],center=true);
-translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
-}
-translate([-45,23,11])
-rotate([0,0,180])
-hull(){
-translate([-22.5,-2,-3])cube([10,10,10],center=true);
-translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
-}
-}
-hull(){
-    translate([0,11.5,20])rotate([0,90,0])cylinder(r=15.25/2,h=24*2+1,center=true);
-    translate([0,11.5,30])rotate([0,90,0])cylinder(r=14.5/2,h=24*2+1,center=true);
-}
-hull(){
-    translate([0,11.5,20])rotate([0,90,0])cylinder(r=12/2,h=80,center=true);
-    translate([0,11.5,30])rotate([0,90,0])cylinder(r=12/2,h=80,center=true);
-}
-translate([0,11.5,-19])rotate([0,90,0])cylinder(r=15.25/2,h=80,center=true);
+    union(){
+        translate([0,11.5,-2.65+5/2-10])cube([55,23,50.5+5+10],center=true);
+        translate([0,0,11])
+        hull(){
+            translate([-22.5,-2,-3])cube([10,10,10],center=true);
+            translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
+        }
+        translate([45,0,0])
+        hull(){
+            translate([-22.5,-2,-3])cube([10,10,10],center=true);
+            translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
+        }
+        translate([0,23,11])
+        rotate([0,0,180])
+        hull(){
+            translate([-22.5,-2,-3])cube([10,10,10],center=true);
+            translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
+        }
+        translate([-45,23,0])
+        rotate([0,0,180])
+        hull(){
+            translate([-22.5,-2,-3])cube([10,10,10],center=true);
+            translate([-22.5,2.5,-3-7])cube([10,1,10],center=true);
+        }
+    }
+    hull(){
+        translate([0,11.5,20])rotate([0,90,0])cylinder(r=17.5/2,h=53,center=true);
+        translate([0,11.5,30])rotate([0,90,0])cylinder(r=17.5/2,h=53,center=true);
+    }
+    hull(){
+        translate([0,11.5,20])rotate([0,90,0])cylinder(r=17/2,h=80,center=true);
+        translate([0,11.5,30])rotate([0,90,0])cylinder(r=17/2,h=80,center=true);
+    }
+    translate([0,11.5,-19])rotate([0,90,0])cylinder(r=17.5/2,h=53,center=true);
+    translate([0,11.5,-19])rotate([0,90,0])cylinder(r=16/2,h=80,center=true);
 
-translate([0,0,-3])agarrecorrea();
-translate([-46,0,-11-3])agarrecorrea();
+    translate([0,0,-11-3])agarrecorrea();
+    translate([-46,0,-3])agarrecorrea();
 
-translate([0,28,-11-3])agarrecorrea();
-translate([-46,28,-3])agarrecorrea();
-translate([0,3+17/2,-25])cube([100,1,10],center=true);
-translate([0,61-25+5,-20.5-2.5])cylinder(r=21,h=10);
+    translate([0,28+1.5,-3])agarrecorrea();
+    translate([-46,28+1.5,-11-3])agarrecorrea();
+    translate([0,3+17/2,-40])cube([100,3,50],center=true);
+    translate([0,61-25+5,-20.5-2.5-15])cylinder(r=21,h=10);
 
-translate([8,0,0])
-hull(){
-translate([-30,11.5,2])color("red")cube([10,6,13],center=true);
-translate([-30-5,11.5,2])color("red")cube([3,8,15],center=true);
+    translate([8,0,0]){
+    hull(){
+        translate([-30+5,11.5,1])color("red")cube([7,4,13],center=true);
+        translate([-30-5,11.5,1])color("red")cube([11*2,6.5,20],center=true);
+    }
+    translate([-39,-5,-5])
+    cube([17.5,10+5,1]);
 }
-translate([8,0,5])rotate([-45,0,0])translate([-40,-3.5,0])cube([15,15,3]);
-translate([0,0,height_fusor/2])
-cube([30,50,16+height_fusor],center=true);
+    translate([0,0,height_fusor/2])
+    cube([30,50,16+height_fusor],center=true);
 }
 
 module agarrecorrea(){
 
-translate([0.55,0,-1]){
+translate([0.55,0-1.5,-1]){
 color("blue")
-translate([15,-7+3.5,11])
+translate([15,-7+3.5+1.5,11])
+    
 cube([15,1,10]);
 
 color("blue")translate([15,-7+3.5+0.5,11])cube([1,1.5,10]);
@@ -186,7 +196,38 @@ translate([-18.2,17.2,-49])rotate([90,0,0])color("blue")import("Stl_Importados/E
 translate([0,-15,-28-23])color("red")cylinder(r=1,h=50);
 }
 
+module e3d_v6(){
+    translate([11.25,0.5,-67.3])
+    rotate([90,0,90+180])
+    color("blue")
+    
+    import("Stl_Importados/E3DV6.STL");
+    
+    translate([0,-15,-28-23])
+    color("red")
+    cylinder(r=1,h=50);
+}
+
 //e3d_volcano();
+e3d_v6();
 carrito();
 //translate([0,-50,height_fusor])soporte_disipador();
-//translate([0,0,-4+height_fusor])layerfan();
+//translate([0+30,0+20,-4+height_fusor])layerfan();
+/*
+translate([0,-15+56,0])
+color("green")
+cylinder(h=50, d=20);
+*/
+
+module toro(diametro, altura, grosor){
+difference(){
+cylinder(d=diametro,h=altura);
+translate([0,0,-2.5])
+cylinder(d=diametro-grosor,h=altura+5);
+}
+}
+
+toro(15,6,4);
+translate([0,22.5,0])
+toro(15,6,4);
+

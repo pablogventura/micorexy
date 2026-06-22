@@ -3,8 +3,29 @@ $fn=32;
 
 izquierda = 1;
 
+linear_extrude(25)
+difference(){
+    translate([20,0,-20])
+    rotate([90,0,0])
+    square([62-20,110]);
+        
+    translate([41.25,0,-10])
+    rotate([90,0,0])
+    circle(d=5.5);
+        
+    translate([41.25,0,-10+90])
+    rotate([90,0,0])
+    circle(d=5.5);
+}
+translate([20,-15,20])
+rotate([90,0,0])
+linear_extrude(20)
+square([62-20,70-40]);
 
-translate([70-izquierda*70,0,0])
+
+
+
+translate([70-izquierda*70+15,5,16.5])
 mirror([1-izquierda,0,0])
 difference(){
 translate([9.5,0,-10.9])
@@ -12,18 +33,11 @@ mirror([1,0,0])
 color("blue")
 difference(){
     union(){
-        hull(){
-            //translate([15.5,-10,-10])cube([9,10,16]);
-            translate([-17.5-20,-20,-5.6-20])cube([42+20,20,70+20+20]);
 
-        }
-        translate([15.5,-10,14])cube([9,10,16]);
-        translate([15.5,-10,-5.5])cube([9,52,16-2+30+5+6.6]);
-        translate([-17.5-20,-10,14+3.8+15+7+6.6-10*(1-izquierda)])cube([42+20,52,5]);
-        translate([-17.5+22.5,-10,14+3.8+15+7+6.6-5])cube([17,52,5]);
+        //translate([-17.5-20,-20,-5.6-20])cube([42+20,20,70+20+20]);
+        //translate([-17.5-20,-10,14+3.8+15+7+6.6-10*(1-izquierda)])cube([42+20,52,5]);
     }
 
-//translate([-7.5,-25,23-3.3+7])cube([22,50,13+10]);
     translate([-12-20,6,10]){
         cylinder(r=3.5/2,h=50);
         translate([0,31,0])cylinder(r=3.5/2,h=50);
@@ -32,7 +46,7 @@ difference(){
         translate([31/2,31/2,0])cylinder(r=23/2,h=50);
     }
 
-    translate([9.5,5,10.9])rotate([90,0,0])cylinder(r=10/2,h=50);
+    //translate([9.5,5,10.9])rotate([90,0,0])cylinder(r=10/2,h=50);
 
     translate([18+2,38,11])rotate([180,0,0])endstop();
     
